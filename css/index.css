@@ -1,55 +1,66 @@
 /*=====reset css=====*/
-body{
+
+body {
     font-size: 14px;
-    font-family: 'Microsoft YaHei',sans-serif;
+    font-family: 'Microsoft YaHei', sans-serif;
     color: #333;
 }
-a{
+
+a {
     text-decoration: none;
     color: #777;
 }
-a:hover{
+
+a:hover {
     text-decoration: none;
-    color:#333;
+    color: #333;
 }
+
 /* 自定义字体图标 */
+
 /* 1通过@font-face定义自己的字体 */
-@font-face{
+
+@font-face {
     /*2.申明自己的字体名称*/
     font-family: 'wjs';
     /*3.引入字体文件（约束某一段字符代码什么图案）*/
-    src:
-    url(../fonts/MiFie-Web-Font.svg) format('svg'),
-    url(../fonts/MiFie-Web-Font.eot) format('embedded-opentype'),
-    url(../fonts/MiFie-Web-Font.ttf) format('truetype'),
-    url(../fonts/MiFie-Web-Font.woff) format('woff');
+    src: url(../fonts/MiFie-Web-Font.svg) format('svg'), url(../fonts/MiFie-Web-Font.eot) format('embedded-opentype'), url(../fonts/MiFie-Web-Font.ttf) format('truetype'), url(../fonts/MiFie-Web-Font.woff) format('woff');
 }
+
 /*4.怎么使用维护性更好*/
-.wjs_icon{
+
+.wjs_icon {
     font-family: wjs;
 }
-.wjs_icon_phone::before{
-    content:"\e908";
+
+.wjs_icon_phone::before {
+    content: "\e908";
 }
-.wjs_icon_tel::before{
+
+.wjs_icon_tel::before {
     content: "\e909";
 }
-.wjs_icon_logo::before{
+
+.wjs_icon_logo::before {
     content: "\e920";
 }
-.wjs_icon_name::before{
+
+.wjs_icon_name::before {
     content: "\e93e";
 }
 
 /*=====modal css=====*/
-.wjs_topBar{
+
+.wjs_topBar {
     font-size: 12px;
-    color:#666;
+    color: #666;
     border-bottom: 1px solid #ccc;
 }
-.wjs_topBar > .container{
-}
-.wjs_topBar > .container > .row{}
+
+.wjs_topBar>.container {}
+
+.wjs_topBar>.container>.row {}
+
 /* .wjs_topBar > .container > .row > div{
     height: 40px;
     border-left: 1px solid #ccc;
@@ -57,167 +68,220 @@ a:hover{
 .wjs_topBar > .container > .row > div:first-child{
     border-left: none;
 } */
+
 /* +,~选择器   + 紧邻的下一个兄弟元素  ~：后面所有的兄弟元素 */
-.wjs_topBar > .container > .row > div{
+
+.wjs_topBar>.container>.row>div {
     height: 40px;
     line-height: 40px;
     text-align: center;
 }
-.wjs_topBar > .container > .row > div + div{
+
+.wjs_topBar>.container>.row>div+div {
     border-left: 1px solid #ccc;
 }
+
 /*  */
-.wjs_topBar .btn-resgiter{
-    border:none;
+
+.wjs_topBar .btn-resgiter {
+    border: none;
     background: #e92322;
     color: #fff;
     font-size: 12px;
     padding: 3px 12px;
 }
-.wjs_topBar .btn-resgiter:hover{
 
-}
-.wjs_topBar .btn-login{
+.wjs_topBar .btn-resgiter:hover {}
+
+.wjs_topBar .btn-login {
     font-size: 12px;
     color: #666;
 }
-.wjs_topBar .btn-login:hover{
+
+.wjs_topBar .btn-login:hover {
     text-decoration: none;
     color: #666;
 }
 
-.wjs_app{
+.wjs_app {
     display: block;
 }
-.wjs_app img{
+
+.wjs_app img {
     display: none;
 }
-.wjs_app:hover img{
+
+.wjs_app:hover img {
     display: block;
-    position: absolute;             /*没有relative?*/
+    position: absolute;
+    /*没有relative?*/
     left: 50%;
-    top:0;
+    top: 0;
     margin-left: -60px;
-    top:40px;
+    top: 40px;
     border: 1px solid #ccc;
     border-top: none;
     z-index: 1000;
 }
 
-
 /* 导航条 */
+
 /* 1.拷贝源码的模块样式，准确定位到所有元素的选择器并且能保证优先级比源码高 */
+
 /* 2.针对功能进行覆盖：更改模块名称 */
+
 /* 3。但是有一些没有用到的选择器 代码的荣誉 */
+
 /* 4.删除：降低代码量 */
+
 /* 5.保留：利于维护，方便产品更新的时候不用再去修改代码 */
+
 .wjs_nav {
     margin-bottom: 0px;
     border: none;
     border-bottom: 1px solid #ccc;
-  }
-.wjs_nav .wjs_icon_logo{
+}
+
+.wjs_nav .wjs_icon_logo {
     font-size: 50px;
     color: #e92322;
     vertical-align: middle;
 }
-.wjs_nav .wjs_icon_name{
+
+.wjs_nav .wjs_icon_name {
     font-size: 36px;
     color: #333;
     vertical-align: middle;
 }
+
 .wjs_nav .navbar-brand {
     height: 80px;
     line-height: 50px;
 }
+
 .wjs_nav .navbar-brand:hover,
 .wjs_nav .navbar-brand:focus {
-color: #5e5e5e;
-background-color: transparent;
+    color: #5e5e5e;
+    background-color: transparent;
 }
+
 .wjs_nav .navbar-text {
     color: #777;
 }
-.wjs_nav .navbar-nav > li > a {
+
+.wjs_nav .navbar-nav>li>a {
     height: 80px;
     line-height: 50px;
 }
-.wjs_nav .navbar-nav > li > a:hover,
-.wjs_nav .navbar-nav > li > a:focus {
+
+.wjs_nav .navbar-nav>li>a:hover,
+.wjs_nav .navbar-nav>li>a:focus {
     color: #777;
     background-color: transparent;
-    border-bottom: 3px solid #e92322; 
+    border-bottom: 3px solid #e92322;
 }
-.wjs_nav .navbar-nav > .active > a,
-.wjs_nav .navbar-nav > .active > a:hover,
-.wjs_nav .navbar-nav > .active > a:focus {
+
+.wjs_nav .navbar-nav>.active>a,
+.wjs_nav .navbar-nav>.active>a:hover,
+.wjs_nav .navbar-nav>.active>a:focus {
     color: #777;
     border-bottom: 3px solid #e92322
 }
-.wjs_nav .navbar-nav > .disabled > a,
-.wjs_nav .navbar-nav > .disabled > a:hover,
-.wjs_nav .navbar-nav > .disabled > a:focus {
+
+.wjs_nav .navbar-nav>.disabled>a,
+.wjs_nav .navbar-nav>.disabled>a:hover,
+.wjs_nav .navbar-nav>.disabled>a:focus {
     color: #ccc;
     background-color: transparent;
 }
+
 .wjs_nav .navbar-toggle {
     border-color: #ddd;
+    margin-top: 23px;
 }
+
 .wjs_nav .navbar-toggle:hover,
 .wjs_nav .navbar-toggle:focus {
     background-color: #ddd;
 }
+
 .wjs_nav .navbar-toggle .icon-bar {
     background-color: #888;
 }
+
 .wjs_nav .navbar-collapse,
 .wjs_nav .navbar-form {
     border-color: #e7e7e7;
 }
-.wjs_nav .navbar-nav > .open > a,
-.wjs_nav .navbar-nav > .open > a:hover,
-.wjs_nav .navbar-nav > .open > a:focus {
+
+.wjs_nav .navbar-nav>.open>a,
+.wjs_nav .navbar-nav>.open>a:hover,
+.wjs_nav .navbar-nav>.open>a:focus {
     color: #555;
     background-color: #e7e7e7;
 }
+
 @media (max-width: 767px) {
-.wjs_nav .navbar-nav .open .dropdown-menu > li > a {
+    .wjs_nav .navbar-nav .open .dropdown-menu>li>a {
         color: #777;
+    }
+    .wjs_nav .navbar-nav .open .dropdown-menu>li>a:hover,
+    .wjs_nav .navbar-nav .open .dropdown-menu>li>a:focus {
+        color: #333;
+        background-color: transparent;
+    }
+    .wjs_nav .navbar-nav .open .dropdown-menu>.active>a,
+    .wjs_nav .navbar-nav .open .dropdown-menu>.active>a:hover,
+    .wjs_nav .navbar-nav .open .dropdown-menu>.active>a:focus {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+    .wjs_nav .navbar-nav .open .dropdown-menu>.disabled>a,
+    .wjs_nav .navbar-nav .open .dropdown-menu>.disabled>a:hover,
+    .wjs_nav .navbar-nav .open .dropdown-menu>.disabled>a:focus {
+        color: #ccc;
+        background-color: transparent;
+    }
 }
-.wjs_nav .navbar-nav .open .dropdown-menu > li > a:hover,
-.wjs_nav .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #333;
-    background-color: transparent;
-}
-.wjs_nav .navbar-nav .open .dropdown-menu > .active > a,
-.wjs_nav .navbar-nav .open .dropdown-menu > .active > a:hover,
-.wjs_nav .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #555;
-    background-color: #e7e7e7;
-}
-.wjs_nav .navbar-nav .open .dropdown-menu > .disabled > a,
-.wjs_nav .navbar-nav .open .dropdown-menu > .disabled > a:hover,
-.wjs_nav .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #ccc;
-    background-color: transparent;
-}
-}
+
 .wjs_nav .navbar-link {
-        color: #777;
+    color: #777;
 }
+
 .wjs_nav .navbar-link:hover {
     color: #333;
 }
+
 .wjs_nav .btn-link {
     color: #777;
 }
+
 .wjs_nav .btn-link:hover,
 .wjs_nav .btn-link:focus {
     color: #333;
 }
+
 .wjs_nav .btn-link[disabled]:hover,
 fieldset[disabled] .wjs_nav .btn-link:hover,
 .wjs_nav .btn-link[disabled]:focus,
 fieldset[disabled] .wjs_nav .btn-link:focus {
     color: #ccc;
+}
+
+/* 轮播图 */
+.wjs_banner .pc_imgBox{
+    display: block;
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.wjs_banner .m_imageBox{
+    display: block;
+    width: 100%;
+}
+.wjs_banner .m_imageBox img{
+    display: block;
+    width: 100%;
 }

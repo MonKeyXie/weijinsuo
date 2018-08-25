@@ -73,14 +73,17 @@ var banner = function() {
         startX = e.originalEvent.touches[0].clientX;
     }).on('touchmove', function(e) {
         isMove = true;
-        distanceX = startX - e.originalEvent.touches[0].clientX;
-        console.log(distanceX);
+        var MoveX = e.originalEvent.touches[0].clientX;
+        distanceX = MoveX - startX;
     }).on('touchend', function(e) {
-        if( isMove && distanceX < 0 ){
+        // 距离足够 50px 一定要滑动过
+        if( isMove && Math.abs(distanceX) > 50 ){
             // 右滑动,上一张
-            $('.carousel').carousel('prev')
-        }else{ //左滑动
-            $('.carousel').carousel('next')
+            if(distanceX < 0){
+                $('.carousel').carousel('next')   
+            }else{ //左滑动
+                $('.carousel').carousel('prev')
+            }
         }
         stratX = 0;
         distanceX = 0;

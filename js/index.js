@@ -10,7 +10,7 @@ var banner = function() {
     // 2.1 把数据转化成html格式的字符串 （动态创建元素/字符串拼接/模板引擎 【artTemplate】）
     // 2.3 把字符渲染到页面中 html
     // 3.测试功能 监听页面尺寸发生改变 重新渲染
-    // 移动端手势切换(非滑动) touch
+    // 4.移动端手势切换(非滑动) touch
 
     /*ui框架：bootstrap,妹子UI,jQueryUI,easyUI,jQueryMobile,mui,framework7 */
     // 关于移动端的UI框架：bootstrap，jQueryMobile，mui,framework7 
@@ -64,4 +64,26 @@ var banner = function() {
     $(window).on('resize',function () {
         render();
     }).trigger('resize');  //通过JS主动触发某个事件(resize为页面尺寸改变事件)
+
+    /*4.移动端手势切换(非滑动) touch */
+    var startX = 0;
+    var distanceX = 0;
+    var isMove = false;
+    $('.carousel').on('touchstart', function(e) {
+        startX = e.originalEvent.touches[0].clientX;
+    }).on('touchmove', function(e) {
+        isMove = true;
+        distanceX = startX - e.originalEvent.touches[0].clientX;
+        console.log(distanceX);
+    }).on('touchend', function(e) {
+        if( isMove && distanceX < 0 ){
+            // 右滑动,上一张
+            $('.carousel').carousel('prev')
+        }else{ //左滑动
+            $('.carousel').carousel('next')
+        }
+        stratX = 0;
+        distanceX = 0;
+        isMove = false;
+    })
 };

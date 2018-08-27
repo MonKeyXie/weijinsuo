@@ -643,7 +643,14 @@ fieldset[disabled] .wjs_nav .btn-link:focus {
     border-color: green;
 }
 /* 
-
+    找到P元素，通过P找到父元素，通过父元素找子元素当中类型为P的，然再去找第几个。
+    p:first-of-type
+    p:last-of-type
+    p:nth-of-type(n)
+    p:nth-last-of-type(n)
+    如果使用的是child;
+    p:first-child
+    找到P元素,通过P找到父元素，通过父元素找所有的子元素，找第一个元素，匹配判断类型(如果不是无效选择器)
 */
 .product_box .pro_right p:first-of-type {
     margin-top: 25px;

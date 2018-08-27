@@ -27,50 +27,48 @@
     <![endif]-->
 </head>
 <body>
-    <!-- navbar 导航模块 navbar-default 默认样式 -->
-    <nav class="navbar navbar-default">
-        <!-- 导航得内容容器 -->
-        <div class="container">
-          <!-- 包含 商标区域 和 切换按钮（在移动端显示） -->
-          <div class="navbar-header">
-            <!-- 切换按钮 -->
-            <!-- 
-            类名：collapsed    折叠
+<!-- navbar 导航模块  navbar-default 默认样式  -->
+<nav class="navbar navbar-default">
+    <!-- 导航的内容容器 -->
+    <div class="container">
+        <!-- 包含 商标区域 和 切换按钮（在移动端显示） -->
+        <div class="navbar-header">
+            <!--切换按钮-->
+            <!--
+            类名：collapsed  样式
             属性：
-            data-toggle="collapse"  申明折叠组件
-            data-target="#bs-example-navbar-collapse-1"  控制的目标元速=选择器
+            data-toggle="collapse"  申明是什么组件=折叠组件
+            data-target="#bs-example-navbar-collapse-1" 控制的目标元素=选择器
             其他：
-            aria-expanded="false"     aria-* : 代表提供给屏幕阅读器使用的（盲人阅读器）
-            class="sr-only"     代表提供给屏幕阅读器使用的（盲人阅读器）
-             -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+            aria-expanded="false"  aria-* 代表提供给屏幕阅读器使用的（盲人阅读器）
+            class="sr-only" screen read only  代表提供给屏幕阅读器使用的（盲人阅读器）
+            -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
+            <!--商标区域-->
             <a class="navbar-brand" href="#">Brand</a>
-          </div>
-          <!--导航链接 表单 其他内容 被切换 -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <!-- 默认的导航 -->
+        </div>
+        <!-- 导航连接  表单  其他内容  被切换 -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <!--默认的导航-->
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
+                <li class="active"><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
             </ul>
-            <!-- 右对齐的导航 -->
+            <!--右对齐的导航-->
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
             </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
-
-
-
+        </div>
+    </div>
+</nav>
 <!-- bootstrap依赖jquery-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../lib/jquery/jquery.min.js"></script>

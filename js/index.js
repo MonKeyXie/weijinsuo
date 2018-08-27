@@ -1,5 +1,10 @@
 $(function() {
+   /*动态轮播图 */
    banner();
+   /*移动端页签 不换行 可滑动*/
+   initMoblieTab();
+   /*初始化 工具提示 */
+   $('[data-toggle="tooltip"]').tooltip()
 });
 
 var banner = function() {
@@ -45,14 +50,13 @@ var banner = function() {
         getData(function (data){
             /*2.根据数据动态渲染 根据当前设备 屏幕宽度判断*/
             var isMobile = $(window).width() < 768;
-            console.log(isMobile)
             /*2.1 准备数据 */
             /*2.1 把数据转化成html格式的字符串 （动态创建元素/字符串拼接/模板引擎 【artTemplate】） */
             // 使用模板引擎：哪些HTML静态要变成动态
             // 发现： 点容器  图片容器 新建模板
             // 开始使用模板引擎(需要传对象)
             // <% console.log(list) 模板引擎类不可使用外部变量 %>
-            var pointHtml = template('pointTemplate',{list:data});
+            var pointHtml = template('pointTemplate',{list:data}); //需传入对象
             var imageHtml = template('imageTemplate',{list:data,isM:isMobile});
             /*2.3 把字符渲染到页面中 */
             $('.carousel-indicators').html(pointHtml);
@@ -90,3 +94,25 @@ var banner = function() {
         isMove = false;
     })
 };
+
+var initMoblieTab = function () {
+    /*1.解决换行问题 */
+    var $navTabs = $('.wjs_product .nav-tabs');
+    var width = 0;
+    $navTabs.find('li').each(function(i, item) {
+        var $currLi  = $(this);
+        var liWidth = $currLi.outerWidth(true);
+        width += liWidth;
+    });
+    $navTabs.width(width);
+
+    /*2.修改结构使之区域滑动的结构 */
+    // 加一个父容器给 nav-tabs 叫 nav-tabs-parent 
+
+    /*3.自己实现滑动效果 或者 使用iSCroll */
+    new IScroll($('.nav-tabs-parent ')[0],{
+        scrollX: true,
+        scrollY: false,
+        click:true
+    })
+}
